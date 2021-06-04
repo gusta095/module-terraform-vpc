@@ -68,7 +68,6 @@ resource "aws_eip" "nat" {
 resource "aws_nat_gateway" "nat-gw" {
   allocation_id = aws_eip.nat.id
   subnet_id     = aws_subnet.subteste-public-1.id
-  depends_on    = ["aws_internet_gateway.igw-vpc"]
 }
 
 # VPC setup for NAT
